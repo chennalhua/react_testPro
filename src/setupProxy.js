@@ -3,7 +3,7 @@ module.exports = function (app) {
     app.use("/api",
         createProxyMiddleware({
             target: 'https://ismart2.goldennet.com.tw:5000',
-            // changeOrigin: true,
+            changeOrigin: true,
             pathRewrite: {
                 "^/api": ""
             }

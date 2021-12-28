@@ -54,7 +54,12 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://ismart2.goldennet.com.tw:5000",
+  "proxy": {
+    "/api/*": {
+      "target": "https://ismart2.goldennet.com.tw:5000",
+      "changeOrigin": true
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
