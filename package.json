@@ -2,6 +2,7 @@
   "name": "ismart_golden",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://chennalhua.github.io/testtest/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
