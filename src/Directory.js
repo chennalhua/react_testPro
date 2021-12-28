@@ -85,6 +85,7 @@ const Directory = () => {
     return (
         <>
             <div className="container mt-3">
+                <h5>公司通訊 頁面</h5>
                 <div className="d-flex pb-2">
                     <select className="form-select" value={location} onChange={handleLocChange}>
                         {
