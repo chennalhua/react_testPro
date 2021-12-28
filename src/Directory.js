@@ -14,12 +14,12 @@ const Directory = () => {
     let [allData, setAllData] = useState([])
     useEffect(() => {
         // let locAPI = `${process.env.REACT_APP_GOLDEN_API5000}Gcd/loc=`;
-        axios.get("https://ismart2.goldennet.com.tw:5000/api/Gcd/loc=")
+        axios.get("/api/Gcd/loc=")
             .then((res) => {
-                if(res.data.ResponseCode == '-1'){
+                if (res.data.ResponseCode == '-1') {
                     console.log('-1')
                     return
-                }else {
+                } else {
                     setAllData(res.data)
                     setIsLoading(false)
                 }
