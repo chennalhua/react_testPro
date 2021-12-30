@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Helmet from 'react-helmet'
 
 //icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -86,6 +87,9 @@ const Directory = () => {
 
     return (
         <>
+            <Helmet>
+                <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+            </Helmet>
             <div className="container mt-3">
                 <h5>公司通訊 頁面</h5>
                 <p>目前環境:{process.env.NODE_ENV}</p>

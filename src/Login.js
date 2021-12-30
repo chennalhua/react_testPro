@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import Helmet from 'react-helmet'
 
 //from
 import { useForm } from "react-hook-form";
@@ -206,39 +206,43 @@ const Login = () => {
         }
     }
     return (
-        <div>
+        <>
+            <Helmet>
+                <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+            </Helmet>
+            <div>
 
-            <div className="container-fluid bg-mask vh-100">
-                <div className="container">
+                <div className="container-fluid bg-mask vh-100">
+                    <div className="container">
 
-                    {/* <h4 className="text-center fw-bolder text-golden-brown">iSmart 登入</h4> */}
-                    <div className="d-flex justify-content-center">
-                        <form onSubmit={handleSubmit(onSubmit)} className="col-12 col-md-6 col-lg-4">
-                            <div className="form-group my-3">
-                                <label htmlFor="uid" className="fw-bolder text-golden-brown">請輸入《業管系統》帳號</label>
-                                <input id="uid" name="uid" type="text" {...register('uid')} className={`form-control ${errors.uid ? 'is-invalid' : ''}`}
-                                />
-                                <div className="invalid-feedback">{errors.uid?.message}</div>
-                            </div>
-                            <div className="form-group my-3 position-relative">
-                                <label htmlFor="pwd" className="fw-bolder text-golden-brown">請輸入《業管系統》密碼</label>
-                                <input id="pwd" name="pwd" type={eye ? 'password' : 'text'} className={`form-control ${errors.pwd ? 'is-invalid' : ''}`}
-                                    {...register('pwd')}
-                                />
-                                <div className="invalid-feedback">{errors.pwd?.message}</div>
-                                <button type="button" className="btn text-dark-blue position-absolute" style={{ right: '-1px', top: '24px' }} onClick={handleEyeClick}><FontAwesomeIcon icon={eye ? faEye : faEyeSlash} /></button>
-                            </div>
-                            <button type="submit" className="btn btn-golden-brown w-100 mt-3" disabled={loadingBtn ? 'disabled' : ''}>
-                                <div className={`spinner-border text-light spinner-border--width mx-2 ${loadingBtn ? 'd-inline-block' : 'd-none'}`} style={{ width: '1rem', height: '1rem' }} role="status" ></div>
-                                登入
-                            </button>
-                            {/* <button type="button" onClick={() => reset()} className="btn btn-secondary">Reset</button> */}
-                        </form>
+                        {/* <h4 className="text-center fw-bolder text-golden-brown">iSmart 登入</h4> */}
+                        <div className="d-flex justify-content-center">
+                            <form onSubmit={handleSubmit(onSubmit)} className="col-12 col-md-6 col-lg-4">
+                                <div className="form-group my-3">
+                                    <label htmlFor="uid" className="fw-bolder text-golden-brown">請輸入《業管系統》帳號</label>
+                                    <input id="uid" name="uid" type="text" {...register('uid')} className={`form-control ${errors.uid ? 'is-invalid' : ''}`}
+                                    />
+                                    <div className="invalid-feedback">{errors.uid?.message}</div>
+                                </div>
+                                <div className="form-group my-3 position-relative">
+                                    <label htmlFor="pwd" className="fw-bolder text-golden-brown">請輸入《業管系統》密碼</label>
+                                    <input id="pwd" name="pwd" type={eye ? 'password' : 'text'} className={`form-control ${errors.pwd ? 'is-invalid' : ''}`}
+                                        {...register('pwd')}
+                                    />
+                                    <div className="invalid-feedback">{errors.pwd?.message}</div>
+                                    <button type="button" className="btn text-dark-blue position-absolute" style={{ right: '-1px', top: '24px' }} onClick={handleEyeClick}><FontAwesomeIcon icon={eye ? faEye : faEyeSlash} /></button>
+                                </div>
+                                <button type="submit" className="btn btn-golden-brown w-100 mt-3" disabled={loadingBtn ? 'disabled' : ''}>
+                                    <div className={`spinner-border text-light spinner-border--width mx-2 ${loadingBtn ? 'd-inline-block' : 'd-none'}`} style={{ width: '1rem', height: '1rem' }} role="status" ></div>
+                                    登入
+                                </button>
+                                {/* <button type="button" onClick={() => reset()} className="btn btn-secondary">Reset</button> */}
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-
-        </div>
+        </>
     );
 };
 
