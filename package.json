@@ -49,7 +49,7 @@
   "proxy": "https://ismart2.goldennet.com.tw:5000",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "dotenv -e .env.development react-scripts build && gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "start:pro": "dotenv -e .env.production react-scripts start",
     "devstart": "webpack-dev-server --open",
     "start": "set HTTPS=true&react-scripts start",
