@@ -15,20 +15,32 @@ const Directory = () => {
     useEffect(() => {
         let locAPI = `${process.env.REACT_APP_GOLDEN_API5000}Gcd/loc=`;
         console.log(locAPI)
-        axios.get(locAPI)
-            .then((res) => {
-                if (res.data.ResponseCode == '-1') {
-                    console.log('-1')
-                    return
-                } else {
-                    setAllData(res.data)
-                    setIsLoading(false)
-                }
+        if (document.cookie) {
+            fetch(locAPI, {
+                method: "GET",
+                // origin: "https://mybackend.herokuapp.com",
+                origin: "https://ismart2.goldennet.com.tw:5000",
+                credentials: "include"
             })
-            .catch((error) => {
-                console.log(error);
-            });
-    }, []);
+                .then((res) => {
+                    // success code
+                })
+                .catch((err) => alert(err.message));
+        }
+        // axios.get(locAPI)
+        //     .then((res) => {
+        //         if (res.data.ResponseCode == '-1') {
+        //             console.log('-1')
+        //             return
+        //         } else {
+        //             setAllData(res.data)
+        //             setIsLoading(false)
+        //         }
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //     });
+    });
 
 
     let locAry = []; //放置所有從 API DATA 取出的 location
