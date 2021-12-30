@@ -46,13 +46,6 @@
     "web-vitals": "^1.1.2",
     "yup": "^0.32.11"
   },
-  "proxy": {
-    "/api": {
-      "target": "https://ismart2.goldennet.com.tw:5000",
-      "changeOrigin": true,
-      "secure": false
-    }
-  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "dotenv -e .env.development react-scripts build && gh-pages -d build",
@@ -95,5 +88,12 @@
     "rollup": "^2.62.0",
     "rollup-plugin-serve": "^1.1.0",
     "webpack-dev-server": "^3.11.1"
+  },
+  "proxy": {
+    "/api": {
+      "target": "https://ismart2.goldennet.com.tw:5000",
+      "changeOrigin": true,
+      "secure": false
+    }
   }
 }
