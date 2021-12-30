@@ -131,6 +131,11 @@ const Login = () => {
 
         fetch(API, {
             method: "POST",
+            headers: {
+                //这里定义了请求头就一定会有预请求。
+                'Cache-Control': 'no-cache',
+                Pragma: 'no-cache'
+            },
             // origin: "https://mybackend.herokuapp.com",
             origin: "https://ismart2.goldennet.com.tw:5000",
             credentials: "include"
