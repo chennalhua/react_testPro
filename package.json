@@ -46,10 +46,11 @@
     "web-vitals": "^1.1.2",
     "yup": "^0.32.11"
   },
+  "proxy": "https://ismart2.goldennet.com.tw:5000",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "dotenv -e .env.development react-scripts build && gh-pages -d build",
-    "start:pro":"dotenv -e .env.production react-scripts start",
+    "start:pro": "dotenv -e .env.production react-scripts start",
     "devstart": "webpack-dev-server --open",
     "start": "set HTTPS=true&react-scripts start",
     "build": "react-scripts build",
@@ -63,7 +64,6 @@
       "react-app/jest"
     ]
   },
-  "proxy": "https://ismartplus-api.goldennet.com.tw/api/",
   "browserslist": {
     "production": [
       ">0.2%",

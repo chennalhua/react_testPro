@@ -9,12 +9,11 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 const Directory = () => {
     //component
     let [isLoading, setIsLoading] = useState(true);
-    
+
     //篩選地區
     let [allData, setAllData] = useState([])
     useEffect(() => {
         let locAPI = `${process.env.REACT_APP_GOLDEN_API5000}Gcd/loc=`;
-        console.log(locAPI)
         axios.get(locAPI)
             .then((res) => {
                 if (res.data.ResponseCode == '-1') {
