@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AppRoute from "./AppRoute";
-import './setupProxy'
+// import './setupProxy'
 
 const App = () => {
   return (

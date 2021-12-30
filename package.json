@@ -46,7 +46,13 @@
     "web-vitals": "^1.1.2",
     "yup": "^0.32.11"
   },
-  "proxy": "https://ismart2.goldennet.com.tw:5000",
+  "proxy": {
+    "/api": {
+      "target": "https://ismart2.goldennet.com.tw:5000",
+      "changeOrigin": true,
+      "secure": false
+    }
+  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "dotenv -e .env.production react-scripts build && gh-pages -d build",

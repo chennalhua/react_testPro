@@ -130,12 +130,12 @@ const Login = () => {
         let API = `${process.env.REACT_APP_GOLDEN_API5000}LineLogin`
         axios.defaults.withCredentials = true;
         axios.post(API, params, {
-            // headers: {
-            //     'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-            //     'Access-Control-Allow-Origin': '*',
-            //     'Access-Control-Allow-Methods': '*',
-            //     'Access-Control-Allow-Headers': '*'
-            // }
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': '*',
+                'Access-Control-Allow-Headers': '*'
+            }
         })
             .then((res) => {
                 if (res.data.ResponseCode === '-2') {
