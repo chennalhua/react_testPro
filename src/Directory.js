@@ -18,10 +18,8 @@ const Directory = () => {
         console.log(locAPI)
         axios.defaults.withCredentials = true;
         axios.get(locAPI, {
-            header: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': '*',
-                'Access-Control-Allow-Headers': '*'
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
             }
         })
             .then((res) => {
