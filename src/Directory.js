@@ -15,37 +15,20 @@ const Directory = () => {
     useEffect(() => {
         let locAPI = `${process.env.REACT_APP_GOLDEN_API5000}Gcd/loc=`;
         console.log(locAPI)
-        // if (document.cookie) {
-        fetch(locAPI, {
-            method: "GET",
-            headers: {
-                //这里定义了请求头就一定会有预请求。
-                'Cache-Control': 'no-cache',
-                Pragma: 'no-cache'
-            },
-            // origin: "https://mybackend.herokuapp.com",
-            origin: "https://ismart2.goldennet.com.tw:5000",
-            credentials: "include"
-        })
+        axios.defaults.withCredentials = true;
+        axios.get(locAPI)
             .then((res) => {
-                console.log(res)
-                // success code
+                if (res.data.ResponseCode == '-1') {
+                    console.log('-1')
+                    return
+                } else {
+                    setAllData(res.data)
+                    setIsLoading(false)
+                }
             })
-            .catch((err) => alert(err.message));
-        // }
-        // axios.get(locAPI)
-        //     .then((res) => {
-        //         if (res.data.ResponseCode == '-1') {
-        //             console.log('-1')
-        //             return
-        //         } else {
-        //             setAllData(res.data)
-        //             setIsLoading(false)
-        //         }
-        //     })
-        //     .catch((error) => {
-        //         console.log(error);
-        //     });
+            .catch((error) => {
+                console.log(error);
+            });
     });
 
 
