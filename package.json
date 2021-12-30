@@ -63,7 +63,7 @@
       "react-app/jest"
     ]
   },
-  "proxy": "https://ismart2.goldennet.com.tw:5000",
+  "proxy": "https://ismartplus-api.goldennet.com.tw/api/",
   "browserslist": {
     "production": [
       ">0.2%",
