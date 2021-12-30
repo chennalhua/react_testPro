@@ -23,6 +23,7 @@ const Directory = () => {
                 credentials: "include"
             })
                 .then((res) => {
+                    console.log(res)
                     // success code
                 })
                 .catch((err) => alert(err.message));
