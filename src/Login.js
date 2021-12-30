@@ -132,7 +132,9 @@ const Login = () => {
         axios.post(API, params, {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-                'Access-Control-Allow-Origin': '*'
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': '*',
+                'Access-Control-Allow-Headers': '*'
             }
         })
             .then((res) => {
