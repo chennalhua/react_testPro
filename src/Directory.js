@@ -15,19 +15,19 @@ const Directory = () => {
     useEffect(() => {
         let locAPI = `${process.env.REACT_APP_GOLDEN_API5000}Gcd/loc=`;
         console.log(locAPI)
-        if (document.cookie) {
-            fetch(locAPI, {
-                method: "GET",
-                // origin: "https://mybackend.herokuapp.com",
-                origin: "https://ismart2.goldennet.com.tw:5000",
-                credentials: "include"
+        // if (document.cookie) {
+        fetch(locAPI, {
+            method: "GET",
+            // origin: "https://mybackend.herokuapp.com",
+            origin: "https://ismart2.goldennet.com.tw:5000",
+            credentials: "include"
+        })
+            .then((res) => {
+                console.log(res)
+                // success code
             })
-                .then((res) => {
-                    console.log(res)
-                    // success code
-                })
-                .catch((err) => alert(err.message));
-        }
+            .catch((err) => alert(err.message));
+        // }
         // axios.get(locAPI)
         //     .then((res) => {
         //         if (res.data.ResponseCode == '-1') {

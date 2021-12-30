@@ -128,6 +128,19 @@ const Login = () => {
         params.append('lineid', 'Ufb5a74fdae4e3fb897371a8ac2f55dde');
 
         let API = `${process.env.REACT_APP_GOLDEN_API5000}LineLogin`
+
+        fetch(API, {
+            method: "POST",
+            // origin: "https://mybackend.herokuapp.com",
+            origin: "https://ismart2.goldennet.com.tw:5000",
+            credentials: "include"
+        })
+            .then((res) => {
+                console.log(res)
+                // success code
+            })
+            .catch((err) => alert(err.message));
+
         axios.post(API, params, {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
