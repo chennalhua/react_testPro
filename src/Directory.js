@@ -17,7 +17,13 @@ const Directory = () => {
         let locAPI = `${process.env.REACT_APP_GOLDEN_API5000}Gcd/loc=`;
         console.log(locAPI)
         axios.defaults.withCredentials = true;
-        axios.get(locAPI)
+        axios.get(locAPI, {
+            header: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': '*',
+                'Access-Control-Allow-Headers': '*'
+            }
+        })
             .then((res) => {
                 if (res.data.ResponseCode == '-1') {
                     console.log('-1')
