@@ -51,6 +51,7 @@
     "predeploy": "npm run build",
     "deploy": "dotenv -e .env.development react-scripts build && gh-pages -d build",
     "start:pro": "dotenv -e .env.production react-scripts start",
+    "start:rea": "set HTTPS=true&react-scripts start",
     "devstart": "webpack-dev-server --open",
     "start": "node node_modules/react-amazing-proxy/start",
     "build": "react-scripts build",
@@ -58,6 +59,7 @@
     "eject": "react-scripts eject",
     "build:dev": "dotenv -e .env.development react-scripts build"
   },
+  "proxy": "https://ismart2.goldennet.com.tw:5000",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -89,12 +91,5 @@
     "rollup": "^2.62.0",
     "rollup-plugin-serve": "^1.1.0",
     "webpack-dev-server": "^3.11.1"
-  },
-  "proxy": {
-    "/api": {
-      "target": "https://ismart2.goldennet.com.tw:5000",
-      "changeOrigin": true,
-      "secure": false
-    }
   }
 }
