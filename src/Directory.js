@@ -1,34 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Helmet from 'react-helmet'
 
 //icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-
+//component
+// import Loading from '../src/assets/javascript/';
+import LineLogin from '../src/assets/javascript/lineLogin';
+// import Countfunc from '../../assets/javascript/countfunc';
 const Directory = () => {
     //component
     let [isLoading, setIsLoading] = useState(true);
 
     //篩選地區
     let [allData, setAllData] = useState([])
+    let [text,setText] = useState('無')
     useEffect(() => {
-        let locAPI = `/api/Gcd/loc=`;
-        axios.get(locAPI)
-            .then((res) => {
-                if (res.data.ResponseCode == '-1') {
-                    console.log('-1')
-                    return
-                } else {
-                    setAllData(res.data)
-                    setIsLoading(false)
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    });
+        localStorage.setItem('testPage','localStorage')
+        setText(localStorage.getItem('testPage'))
+    }, []);
 
 
     let locAry = []; //放置所有從 API DATA 取出的 location
@@ -85,12 +76,9 @@ const Directory = () => {
 
     return (
         <>
-            <Helmet>
-                <meta http-equiv="Access-Control-Allow-Origin" content="*" />
-            </Helmet>
+            {/* <Loading isLoading={isLoading} /> */}
             <div className="container mt-3">
-                <h5>公司通訊 頁面</h5>
-                <p>目前環境:{process.env.NODE_ENV}</p>
+                {text}
                 <div className="d-flex pb-2">
                     <select className="form-select" value={location} onChange={handleLocChange}>
                         {

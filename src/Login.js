@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Helmet from 'react-helmet'
+
+//component
+// import BackgroundWrapper from "../components/BackgroundWrapper";
 
 //from
 import { useForm } from "react-hook-form";
@@ -13,6 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { default as swal } from 'sweetalert2'
 
+// import goldenLogo from "../assets/images/goldennet_logo.svg";
 
 import axios from 'axios';
 import url from 'url';
@@ -125,22 +128,23 @@ const Login = () => {
     //判斷 line 登入權限
     const lineCanLogin = (id) => {
         let params = new URLSearchParams();
-        params.append('lineid', 'Ufb5a74fdae4e3fb897371a8ac2f55dde');
+        params.append('lineid', id);
 
         let API = `${process.env.REACT_APP_GOLDEN_API5000}LineLogin`
-        axios.defaults.withCredentials = true;
-        axios.post(API, params, {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': '*',
-                'Access-Control-Allow-Headers': '*'
-            }
-        })
+        /* 0:驗證成功 -2:帳號停用中 -3:不在使用權限內，需進行業管帳密登入驗證 -6:帳號未繳費 */
+        axios.post(API, params)
             .then((res) => {
-                if (res.data.ResponseCode === '-2') {
-                    // window.location.href = '/lineid_blocked'
-                    alert('離職 ing')
+                if (res.data.ResponseCode === '0') {
+                    if (localStorage.getItem('page') === null) {
+                        window.location.href = '/use_ismart_plus'
+                    } else {
+                        const { JWT, Token } = res.data;
+                        document.cookie = `iSmartToken=${JWT};`;
+                        document.cookie = `MyToken=${Token};`;
+                        setTimeout(() => { window.location.href = localStorage.getItem('page') }, 1000);
+                    }
+                } else if (res.data.ResponseCode === '-2') {
+                    window.location.href = '/lineid_blocked'
                 } else if (res.data.ResponseCode === '-3') {
                     swal.fire({
                         icon: 'info',
@@ -148,10 +152,8 @@ const Login = () => {
                         text: '請進行業管系《帳號、密碼》登入驗證',
                         confirmButtonText: '好的',
                     })
-                } else {
-                    alert('可使用')
-                    // window.location.href = '/use_ismart_plus'
-                    // window.close();
+                } else if (res.data.ResponseCode === '-6') {
+                    window.location.href = '/lineid_not_pay'
                 }
             })
             .catch((err) => {
@@ -167,9 +169,12 @@ const Login = () => {
         salesLoginData.append('pwd', data.pwd);
 
         let API = `${process.env.REACT_APP_GOLDEN_API5000}SalesLogin`
-        axios.post(API, salesLoginData)
+        axios.default.withCredentials = true;
+        axios.post(API, salesLoginData, {
+            withCredentials: true,
+            headers: { 'Access-Control-Allow-Credentials': 'true' }
+        })
             .then((res) => {
-                console.log(res)
                 if (res.data.ResponseCode === '0') {
                     swal.fire({
                         icon: 'success',
@@ -209,15 +214,11 @@ const Login = () => {
         }
     }
     return (
-        <>
-            <Helmet>
-                <meta http-equiv="Access-Control-Allow-Origin" content="*" />
-            </Helmet>
-            <div>
-
+        <div>
+            {/* <BackgroundWrapper> */}
                 <div className="container-fluid bg-mask vh-100">
                     <div className="container">
-
+                        {/* <div className="text-center py-5"><img src={goldenLogo} className="img-fluid" alt="Golden-LOGO" width="300px" /></div> */}
                         {/* <h4 className="text-center fw-bolder text-golden-brown">iSmart 登入</h4> */}
                         <div className="d-flex justify-content-center">
                             <form onSubmit={handleSubmit(onSubmit)} className="col-12 col-md-6 col-lg-4">
@@ -244,8 +245,8 @@ const Login = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </>
+            {/* </BackgroundWrapper> */}
+        </div>
     );
 };
 
