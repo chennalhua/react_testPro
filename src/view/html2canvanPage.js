@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from "react-helmet";
 import '../assets/stylesheet/all.scss';
 
@@ -16,6 +16,7 @@ import logoUrl from '../assets/images/happyRetiredLife/logo.png';
 import decorationImg1 from '../assets/images/happyRetiredLife/img1.svg';//菱形
 import decorationImg2 from '../assets/images/happyRetiredLife/img2.svg';//米型
 
+// ios15.2 blob 猜測不支援問題，跳轉換不成功 !!
 const HappyRetiredLife = () => {
     const bgWall = {//白牆
         backgroundImage: `url(${bgWallUrl})`
@@ -25,6 +26,18 @@ const HappyRetiredLife = () => {
     downloadImg();
     const handleDate = (e) => { //input 填寫日期欄位
         setDate(e.target.value)
+    }
+
+    let [blob, setBlob] = useState(localStorage.getItem('blob'))
+    useEffect(() => {
+        setBlob(localStorage.getItem('blob'))
+        console.log(localStorage.getItem('blob'))
+        // window.location.href = localStorage.getItem('blob')
+    }, [blob]);
+
+    const handleClickBlob = () => {
+        alert(`正在跳轉 ${localStorage.getItem('blob')}`)
+        window.location.href = `https://chennalhua.github.io/react_testPro.jsp?imgurl=${localStorage.getItem('blob')}`
     }
 
     const bgWapperStyle = {
@@ -279,7 +292,12 @@ const HappyRetiredLife = () => {
                                     <label htmlFor="date" className="text-life-blue fw-bolder">填寫日期：</label>
                                     <input type="date" className="form-control d-inline-block date" value={date} onChange={handleDate} />
                                 </div>
-                                <button className="btn text-life-blue d-inline" id="save-local"><FontAwesomeIcon className="fs-5" icon={faDownload}></FontAwesomeIcon></button>
+                                <p>測 6</p>
+                                <p>{blob}</p>
+                                <button className="btn text-life-blue d-inline" id="save-local">
+                                    <FontAwesomeIcon className="fs-5" icon={faDownload}></FontAwesomeIcon>
+                                </button>
+                                <button className="btn" onClick={handleClickBlob}>blob href</button>
                             </div>
                         </div>
                         {/* logo */}
