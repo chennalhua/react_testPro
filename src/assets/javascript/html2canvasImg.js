@@ -37,7 +37,7 @@ export default function download() {
                 html2canvas(shareContent, opts).then(function (canvas) {
                     IMAGE_URL = canvas.toDataURL("image/png");
                     downloadBase64(IMAGE_URL, 'HappyRetiredLife.png');
-                    setTimeout(document.getElementById("viewport").setAttribute("content", "width=device-width, initial-scale=1"),1000);
+                    // setTimeout(document.getElementById("viewport").setAttribute("content", "width=device-width, initial-scale=1"),1000);
                 })
             }
         },500);
@@ -64,10 +64,12 @@ export default function download() {
                 downloadLink.download = filename
                 downloadLink.href = href
                 downloadLink.click()
+                console.log(href)
             } catch (err) {
             } finally {
                 if (href) {
-                    window.URL.revokeObjectURL(href);
+                    // window.URL.revokeObjectURL(href);
+                    window.location.href = href
                 }
                 // downloadLink.remove()
             }

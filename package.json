@@ -19,7 +19,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "gh-pages": "^3.2.3",
-    "html2canvas": "^1.4.0",
+    "html2canvas": "^1.0.0-rc.3",
     "http-proxy-middleware": "^2.0.1",
     "jquery": "^3.6.0",
     "jsonwebtoken": "^8.5.1",
