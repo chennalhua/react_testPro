@@ -1,0 +1,266 @@
+.catbox {
+    border: 1px solid $dark-blue;
+    border-radius: 3px;
+    padding: 15px;
+    text-align: center;
+    color: $dark-blue;
+    &-active {
+        background: $dark-blue;
+        color: #fff;
+    }
+}
+
+/*--保險公司 start--*/
+.company-logo {
+    height: 140px;
+    object-fit: contain;
+    @include mw-768 {
+        height: 175px;
+    }
+    @include mw-992 {
+        height: 125px;
+    }
+} //logo 統一固定高度 size
+
+.precautions-text {
+    // 注意事項 icon
+    &::before {
+        content: "!";
+        display: flex;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background: $golden-yellow;
+        border-radius: 50px;
+        border: 3px solid #000;
+        margin-right: 8px;
+    }
+}
+/*--保險公司 end--*/
+
+/*--商品資訊 start--*/
+.insured-amount--group {
+    //財傳退休 保額 button
+    button {
+        font-size: 0.76rem;
+    }
+    input {
+        border-right: transparent;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    span {
+        color: #676767;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        padding-right: 2px;
+        border: 1px solid #ced4da;
+        border-left: transparent;
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+    }
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 15px;
+    right: 8px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.animation-trans {
+    transition: all 0.5s;
+    animation: fadeIn 2s;
+}
+
+//商品佣金
+.top-header {
+    background: $golden-brown;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+//主力商品
+.cal-icon{
+    &::after{
+        font-family: "Font Awesome 5 Free"; 
+        content:'\f1ec';
+        color: $dark-blue;
+        font-weight: bolder;
+        font-size: 28px;
+    }
+}
+
+/*--商品資訊 end--*/
+
+/*--保單專區 start--*/
+.e-card {
+    //個人資訊 -- 電子名片
+    max-width: 100%;
+    width: 350px;
+    // height: 420px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    &::before {
+        //棕色壓條
+        content: "";
+        display: block;
+        width: 30%;
+        height: 15px;
+        background: $golden-brown;
+        border-bottom-left-radius: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+    }
+    &::after {
+        // 黃色壓條
+        content: "";
+        width: 70%;
+        height: 15px;
+        display: block;
+        background: $golden-yellow;
+        border-bottom-right-radius: 10px;
+        position: absolute;
+        right: 0;
+        bottom: 0px;
+    }
+    .info-header {
+        line-height: 40px;
+    }
+    .info-list {
+        //資訊列表
+        line-height: 30px;
+    }
+    .special {
+        li {
+            &::before {
+                content: "";
+                margin-right: 4px;
+                // background: url("../../images/addMembers/list-style_2x.png") no-repeat center center;
+                background-size: contain;
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+            }
+        }
+    }
+    .golden-company {
+        //固定下方
+        position: absolute;
+        bottom: 24px;
+        right: 16px;
+        color: gray;
+    }
+}
+/*--保單專區 end--*/
+
+/*--增員素材 start--*/
+.grow-item {
+    // 使命優勢(公司成長歷程圖)
+    @include mw-768 {
+        position: relative;
+    }
+    .grow-line {
+        // background: url("../../images/addMembers/list-style_1x.png") no-repeat;
+        width: 16px;
+        height: 100%;
+        position: relative;
+        @include mw-768 {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            overflow: hidden;
+        }
+        span {
+            margin-left: 50px;
+        }
+        &::after {
+            content: "";
+            width: 2px;
+            height: 97%;
+            background: $golden-yellow;
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.awards {
+    //公勝優勢(獎項橫幅)
+    // background: url('../../images/addMembers/goldenAdvantage/photo/secondBanner.png') no-repeat;
+    background-color: #676767;
+    background-size: contain;
+    width: 100%;
+    height: 180px;
+}
+
+//宣傳影片
+.video {
+    iframe {
+        height: 300px;
+        padding: 0 20px;
+        @include mw-768 {
+            height: 500px;
+            padding: 0 50px;
+        }
+        @include mw-992 {
+            height: 500px;
+            padding: 0 50px;
+        }
+    }
+}
+
+/*--增員素材 end--*/
+
+/*--現售商品 start--*/
+.object-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card-shadow {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.catOption {
+    display: block;
+    border: 1px solid $dark-blue;
+    color: $dark-blue;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    .form-check-input {
+        display: none !important;
+    }
+    &-active {
+        background: $dark-blue;
+        color: #fff;
+    }
+}
+
+.page-active{
+    background: $dark-blue;
+    color: #fff;
+}
+.page-disabled{
+    background: #dddddd;
+    color: #b5b5b5;
+}
+/*--現售商品 end--*/
+
+/*--保單查詢 start--*/
+.query-title{
+    width: 120px;
+}
+/*--保單查詢 end--*/
+
+

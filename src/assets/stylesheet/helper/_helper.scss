@@ -1,0 +1,25 @@
+$golden-yellow: #FEC842; //自訂
+$golden-brown:  #8F7140; //自訂
+$yellow-light:  #FFFCF3; //自訂
+$dark-blue:  #315176; //自訂
+
+
+//media
+@mixin mw-992{
+    @media (min-width: 992px){
+        @content;
+    }
+}
+
+@mixin mw-768{
+    @media (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin mw-576{
+    @media (min-width: 576px){
+        @content;
+    }
+}
+

@@ -1,0 +1,165 @@
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Microsoft JhengHei','Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+h1,h2,h3,h4,h5,h6,p,ul,li{
+  margin-bottom: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.pre{
+  white-space: pre-wrap;
+}
+
+.page-content-link a, .page-content-link span{
+  text-decoration: none;
+  color: $dark-blue;
+  &:hover{
+    color: $golden-brown;
+  }
+}
+
+.bg-fixed-bottom{
+  background: left bottom no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+}
+
+//分頁
+.page-link{
+  color: $dark-blue;
+}
+
+//input checked
+.form-check-input:checked {
+  background-color: $dark-blue;
+  border-color: $dark-blue;
+}
+
+//手型符號
+.cursor-pointer{
+  cursor: pointer;
+}
+
+// .bg-mask{
+//   background: rgba(255,255,255,0.3);
+// }
+
+
+.arrowup-icon{
+  &::after{
+      font-family: "Font Awesome 5 Free"; 
+      content:'\f077';
+      color: #fff;
+      font-weight: bolder;
+      font-size: 20px;
+  }
+}
+.arrowdown-icon{
+  &::after{
+      font-family: "Font Awesome 5 Free"; 
+      content:'\f078';
+      color: #fff;
+      font-weight: bolder;
+      font-size: 20px;
+  }
+}
+.search-icon{
+  &::after{
+      font-family: "Font Awesome 5 Free"; 
+      content:'\f002';
+      color: #fff;
+      font-weight: bolder;
+      font-size: 20px;
+  }
+}
+.times-icon{
+  &::after{
+      font-family: "Font Awesome 5 Free"; 
+      content:'\f00d';
+      color: #fff;
+      font-weight: bolder;
+      font-size: 20px;
+  }
+}
+.dollar-icon{
+  &::before{
+      font-family: "Font Awesome 5 Free"; 
+      content:'\f155';
+      font-weight: bolder;
+      font-size: 18px;
+      margin-right:9px ;
+  }
+}
+.check-icon{
+  &::before{
+      font-family: "Font Awesome 5 Free"; 
+      content:'\f058';
+      font-weight: bolder;
+      font-size: 18px;
+      margin-right:5px ;
+  }
+}
+
+
+//slick
+.slick-prev:before, .slick-next:before{
+  display: none;
+  @include mw-992{
+      display: block;
+      color: $golden-brown;
+  }
+}
+
+//sweet alert
+.swal2-styled.swal2-confirm {
+  background-color: $golden-brown !important;
+}
+
+.swal2-icon.swal2-info, .swal2-icon.swal2-error {
+  border-color: $dark-blue !important;
+  color: $dark-blue !important;
+}
+
+.swal2-icon.swal2-error [class^=swal2-x-mark-line]{
+  background-color: $dark-blue !important;
+}
+
+.swal2-actions{
+  button{
+      outline: none !important;
+  }
+}
+
+//bootstrap
+.page-item.active .page-link{
+  background-color: $dark-blue;
+  border-color: $dark-blue;
+}
+
+.accordion-button::after{
+  margin-right: 12px !important;
+}
+
+.accordion-button:not(.collapsed){
+  color: #000 !important;
+  background-color: transparent !important;
+  box-shadow: 0 !important;
+}
+
+// .slick-list{
+//     display: grid;
+// }
+// .slick-slide div{
+//     height: 100%;
+// }

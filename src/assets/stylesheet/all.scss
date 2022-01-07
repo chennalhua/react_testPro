@@ -1,0 +1,29 @@
+@import "~bootstrap/scss/functions";
+
+@import "./helper/variables"; 
+@import "./helper/utilities"; 
+
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/bootstrap";
+
+//slick
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+//fontAwesome
+@import url("https://use.fontawesome.com/releases/v5.3.1/css/all.css");
+
+//helper
+@import "./helper/helper";
+
+//basic
+@import "./basic/basic";
+
+//components
+@import "./views/components.scss";
+
+//view
+@import "./views/view";
+@import "./views//happyRetiredLife/happyRetiredLife"; //樂退完美人生
+
+@import "./views/dashboard"; //後台發訊中心

@@ -1,0 +1,94 @@
+.dashboard {
+    button:hover {
+        background-color: $dark-blue;
+        border-radius: 5px;
+    }
+}
+
+.dashboard_nav--active {
+    background-color: $dark-blue;
+    border-radius: 5px;
+}
+
+//發訊中心
+.message-center {
+    textarea, .box {
+        height: 150px;
+        border: 1px solid #cdcccc;
+        background-color: #fff;
+        overflow-y: scroll;
+    }
+}
+.scroll-box{
+    overflow-y: scroll;
+    height:80vh
+}
+
+.earth-btn{
+    &::before{
+        font-family: 'Font Awesome 5 Free';
+        content:'\f57e';
+        font-size:15px;
+        font-weight: bolder;
+        margin-right: 6px;
+    }
+}
+.dept-btn{
+    &::before{
+        font-family: 'Font Awesome 5 Free';
+        content:'\f1ad';
+        font-size:15px;
+        font-weight: bolder;
+        margin-right: 6px;
+    }
+}
+.user-btn{
+    &::before{
+        font-family: 'Font Awesome 5 Free';
+        content:'\f007';
+        font-size:15px;
+        font-weight: bolder;
+        margin-right: 6px;
+    }
+}
+
+.add-btn{
+    &::after{
+        font-family: 'Font Awesome 5 Free';
+        content:'\f055';
+        font-size:20px;
+        font-weight: bolder;
+    }
+}
+.del-btn{
+    &::after{
+        font-family: 'Font Awesome 5 Free';
+        content:'\f2ed';
+        font-size:20px;
+        font-weight: bolder;
+    }
+}
+.role-btn{
+    &::after{
+        font-family: 'Font Awesome 5 Free';
+        content:'\f4fe';
+        font-size:20px;
+        font-weight: bolder;
+        color: #676767;
+    }
+}
+.password-btn{
+    &::after{
+        font-family: 'Font Awesome 5 Free';
+        content:'\f084';
+        font-size:20px;
+        font-weight: bolder;
+        color: #676767;
+    }
+}
+
+.string-len{
+    font-size: 14px;
+    font-weight: bolder;
+    margin-left: 5px;
+}

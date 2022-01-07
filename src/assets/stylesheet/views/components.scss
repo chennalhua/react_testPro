@@ -1,0 +1,211 @@
+/*共用上方選單列*/
+.top-nav {
+    background: $golden-brown;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    z-index: 300;
+    // fixed 固定在上方
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    .form-control {
+        color: $dark-blue;
+    }
+    a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        border: 1px solid #fff;
+        padding: 3px 0px;
+        transition: all 0.3s;
+        &:hover {
+            background: $dark-blue;
+            border: 1px solid $dark-blue !important;
+        }
+    }
+    li {
+        border-bottom: 2px solid transparent;
+    }
+}
+
+.text-box {
+    p {
+        background: $dark-blue;
+    }
+}
+
+.top_nav--active {
+    background: $dark-blue;
+    border: 1px solid $dark-blue !important;
+}
+
+/*增員素材 banner*/
+.banner {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-bottom: 9px solid $golden-brown;
+    height: 13rem;
+    position: relative;
+    @include mw-768 {
+        height: 380px;
+    }
+    @include mw-992 {
+        height: 450px;
+    }
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.35);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .banner-title {
+        font-size: 1.5rem;
+        word-break: break-all;
+        line-height: inherit;
+        z-index: 100;
+        @include mw-768 {
+            font-size: 2rem;
+        }
+    }
+}
+
+/*inside 切換選單*/
+.inside-nav {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    z-index: 300;
+    a {
+        color: black;
+        padding: 16px 24px;
+        border-bottom: 3px solid transparent;
+        // &:hover{
+        //     color: $golden-brown;
+        //     border-bottom: 3px solid $golden-brown;
+        // }
+    }
+}
+
+.inside_nav--active {
+    color: $golden-brown !important;
+    border-bottom: 3px solid $golden-brown !important;
+}
+
+/*box*/
+.insurance-box {
+    max-width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    .box-header {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        text-align: center;
+        font-weight: bolder;
+        padding: 10px 0;
+        color: #fff;
+        border: 1.5px solid;
+        margin-bottom: -1.5px;
+    }
+    .box-body {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        text-align: center;
+        border: 1.5px solid;
+        padding: 10px;
+        background: #fff;
+        // height: 100%;
+    }
+    .box-num {
+        font-size: 20px;
+        font-weight: bolder;
+        padding: 0 8px;
+    }
+}
+
+/*主力商品 最下方 footer*/
+.product-footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    .footer-item {
+        &::after {
+            content: "";
+            margin: 0px 10px;
+            background: #5e5e5e;
+            border: 0.1px solid #5e5e5e;
+            box-sizing: border-box;
+            opacity: 0.4;
+        }
+    }
+}
+
+/*loading*/
+.loading-wrapper {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    .loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+    .spinner-border--width {
+        width: 3rem;
+        height: 3rem;
+        border: 0.4em solid $golden-brown;
+        border-right-color: transparent;
+    }
+}
+
+.spinner-grow {
+    width: 1.2rem;
+    height: 1.2rem;
+    &::before {
+        content: "";
+        width: 0.4rem;
+        height: 0.4rem;
+        background: rgba(255, 255, 255, 0.8);
+        position: absolute;
+        transform: rotate(45deg) translate(-50%, -50%);
+        top: 57%;
+        left: 33%;
+        border-radius: 1.5px;
+    }
+}
+
+//頁面跳轉動畫
+.goto-page{
+    position: relative;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.goto-page::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 8px;
+    left: 113px;
+    width: 30%;
+    color: #fff;
+    overflow: hidden;
+    animation: type 1s steps(11) infinite ;
+    -webkit-animation: type 1s steps(11) infinite ;
+    white-space: nowrap;
+}
+@keyframes type {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 20%;
+    }
+}
+
