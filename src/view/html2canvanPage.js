@@ -28,17 +28,6 @@ const HappyRetiredLife = () => {
         setDate(e.target.value)
     }
 
-    let [blob, setBlob] = useState(localStorage.getItem('blob'))
-    useEffect(() => {
-        setBlob(localStorage.getItem('blob'))
-        console.log(localStorage.getItem('blob'))
-        // window.location.href = localStorage.getItem('blob')
-    }, [blob]);
-
-    const handleClickBlob = () => {
-        alert(`正在跳轉 ${localStorage.getItem('blob')}`)
-        window.location.href = `https://chennalhua.github.io/react_testPro.jsp?imgurl=${localStorage.getItem('blob')}`
-    }
 
     const bgWapperStyle = {
         /* ios15 文字問題 */
@@ -293,11 +282,9 @@ const HappyRetiredLife = () => {
                                     <input type="date" className="form-control d-inline-block date" value={date} onChange={handleDate} />
                                 </div>
                                 <p>測 6</p>
-                                <p>{blob}</p>
                                 <button className="btn text-life-blue d-inline" id="save-local">
                                     <FontAwesomeIcon className="fs-5" icon={faDownload}></FontAwesomeIcon>
                                 </button>
-                                <button className="btn" onClick={handleClickBlob}>blob href</button>
                             </div>
                         </div>
                         {/* logo */}
@@ -307,6 +294,8 @@ const HappyRetiredLife = () => {
                         </footer>
                     </div>
                 </div>
+            </div>
+            <div id="img-out" className="my-image">
             </div>
         </>
     )
