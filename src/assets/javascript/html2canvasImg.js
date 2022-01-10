@@ -6,7 +6,6 @@ export default function download() {
         catch (e) { return false; }
     }
     window.onload = function () {
-        //---------------------------------------------
         let IMAGE_URL;
         function screen() {
             setTimeout(function takeScreenshot() {
@@ -35,21 +34,24 @@ export default function download() {
                         width: width, //dom 原始寬度
                         height: height, //dom 原始高度
                         backgroundColor: 'transparent',
-                        // proxy: 'https://chennalhua.github.io/react_testPro/',
                         useCORS: true, //解決圖片跨域問題
                         allowTaint: true,
                         removeContainer: true,
                     };
                     html2canvas(shareContent, opts).then(function (canvas) {
-                        document.getElementById('img-out').appendChild(canvas)
+                        var image = new Image();
+                        image.src = canvas.toDataURL("image/png");
+                        document.getElementById('img-out').appendChild(image)
+                        document.getElementById('text').innerHTML = `<p class="text-center py-3 fw-bolder">使用 Line，請長壓儲存圖片</p>`
                         IMAGE_URL = canvas.toDataURL("image/png");
                         downloadBase64(IMAGE_URL, 'HappyRetiredLife.png');
                         if (isMobile()) {
                             document.getElementById("downloadJPG").setAttribute("style", "display:none")
                         } else {
                             setTimeout(document.getElementById("viewport").setAttribute("content", "width=device-width, initial-scale=1"), 1000);
+                            document.getElementById("img-out").setAttribute("style", "display:none")
+                            document.getElementById("text").setAttribute("style", "display:none")
                         }
-
                     })
                 }
             }, 500);

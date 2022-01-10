@@ -281,7 +281,7 @@ const HappyRetiredLife = () => {
                                     <label htmlFor="date" className="text-life-blue fw-bolder">填寫日期：</label>
                                     <input type="date" className="form-control d-inline-block date" value={date} onChange={handleDate} />
                                 </div>
-                                <p>測 6</p>
+                                <p>測 9</p>
                                 <button className="btn text-life-blue d-inline" id="save-local">
                                     <FontAwesomeIcon className="fs-5" icon={faDownload}></FontAwesomeIcon>
                                 </button>
@@ -297,6 +297,7 @@ const HappyRetiredLife = () => {
             </div>
             <div id="img-out" className="my-image">
             </div>
+            <div id="text"></div>
         </>
     )
 }
