@@ -12,10 +12,10 @@
 #### 2022/01/13
  - 新增判斷使用者 mobile 系統終端 (IOS or Android) (commit f2c3c01b)
 ### ■ iSmart 約訪紀錄上線實測
- - https://chennalhua.github.io/react_testPro/#/viscus
+ - https://chennalhua.github.io/react_testPro/#/viscus <br/>
 原 console.log 會報錯為: has been blocked by CORS policy: Response to preflight request doesn't pass access control check: It does not have HTTP ok status.
  - 原因為 POST request Method 前端會請求後台時會先發送 options 預檢請求，預檢請求失敗則會出現以上(報錯問題)
- - 解決：前端 POST 自帶 headers content-type (其為四種常見的 POST 數據)
+ - 解決：前端 POST 自帶 headers content-type (其為四種常見的 POST 數據)<br/>
  參考：
  - https://www.itread01.com/content/1536302734.html
  - https://blog.csdn.net/vevin/article/details/108757157
