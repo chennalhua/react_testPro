@@ -42,7 +42,16 @@ export default function download() {
                         var image = new Image();
                         image.src = canvas.toDataURL("image/png");
                         document.getElementById('img-out').appendChild(image)
-                        document.getElementById('text').innerHTML = `<p class="text-center py-3 fw-bolder">使用 Line，請長壓儲存圖片</p>`
+                        //--ios or android
+                        let u = navigator.userAgent;
+                        let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android終端
+                        let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios終端
+                        if(isAndroid){
+                            document.getElementById('text').innerHTML = `<p class="text-center py-3 fw-bolder">請長壓加入圖片~(我是 Android)</p>`
+                        }else if(isiOS){
+                            document.getElementById('text').innerHTML = `<p class="text-center py-3 fw-bolder">請長壓加入圖片~(我是 IOS)</p>`
+                        }
+                        //--ios or android
                         IMAGE_URL = canvas.toDataURL("image/png");
                         downloadBase64(IMAGE_URL, 'HappyRetiredLife.png');
                         if (isMobile()) {
