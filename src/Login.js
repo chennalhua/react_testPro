@@ -169,7 +169,6 @@ const Login = () => {
         salesLoginData.append('pwd', data.pwd);
 
         let API = `${process.env.REACT_APP_GOLDEN_API5000}SalesLogin`
-        axios.default.withCredentials = true;
         axios.post(API, salesLoginData, {
             withCredentials: true,
             headers: { 'Access-Control-Allow-Credentials': 'true' }

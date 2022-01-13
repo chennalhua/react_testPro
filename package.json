@@ -62,7 +62,6 @@
     "eject": "react-scripts eject",
     "build:dev": "dotenv -e .env.development react-scripts build"
   },
-  "proxy": "https://ismart2.goldennet.com.tw:5000",
   "eslintConfig": {
     "extends": [
       "react-app",
