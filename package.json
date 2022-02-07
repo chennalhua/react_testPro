@@ -55,6 +55,7 @@
     "deploy": "gh-pages -d build",
     "start:pro": "dotenv -e .env.production react-scripts start",
     "start:rea": "set HTTPS=true&react-scripts start",
+    "start:http": "react-scripts start",
     "devstart": "webpack-dev-server --open",
     "start": "node node_modules/react-amazing-proxy/start",
     "build": "react-scripts build",

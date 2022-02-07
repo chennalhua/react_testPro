@@ -1,6 +1,6 @@
 /*共用上方選單列*/
 .top-nav {
-    background: $golden-brown;
+    background: $dark-blue;
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
@@ -90,8 +90,8 @@
 }
 
 .inside_nav--active {
-    color: $golden-brown !important;
-    border-bottom: 3px solid $golden-brown !important;
+    color: $dark-blue !important;
+    border-bottom: 3px solid $dark-blue !important;
 }
 
 /*box*/
