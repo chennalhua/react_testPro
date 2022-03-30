@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter  as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 
 import Login from "./Login"; //登入
 import Test from "./view/Directory";
@@ -8,6 +8,7 @@ import DomToImg from "./view/domToImg"
 import Cus from "./view/visitCustomer"
 import Phone from "./view/IsIOSorAndroid"
 import Pdf from "./view/downloadpdf"
+import Pet from './view/Pet'
 // import Ecard from "./view/insurancePolicy/personal/Ecard"
 
 const AppRoute = (props) => {
@@ -21,6 +22,7 @@ const AppRoute = (props) => {
             {/* <Route exact path="/viscus"><Cus /></Route> */}
             <Route exact path="/phone"><Phone /></Route>
             <Route exact path="/pdf"><Pdf /></Route>
+            <Route exact path="/pet"><Pet /></Route>
         </Router>
     )
 }
