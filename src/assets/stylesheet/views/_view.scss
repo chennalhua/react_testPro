@@ -83,10 +83,10 @@
 }
 
 //主力商品
-.cal-icon{
-    &::after{
-        font-family: "Font Awesome 5 Free"; 
-        content:'\f1ec';
+.cal-icon {
+    &::after {
+        font-family: "Font Awesome 5 Free";
+        content: "\f1ec";
         color: $dark-blue;
         font-weight: bolder;
         font-size: 28px;
@@ -245,20 +245,39 @@
     }
 }
 
-.page-active{
+.page-active {
     background: $dark-blue;
     color: #fff;
 }
-.page-disabled{
+.page-disabled {
     background: #dddddd;
     color: #b5b5b5;
 }
 /*--現售商品 end--*/
 
 /*--保單查詢 start--*/
-.query-title{
+.query-title {
     width: 120px;
 }
 /*--保單查詢 end--*/
 
+//---------
+.show_iframe {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.show_iframe iframe {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
 
+html {
+    scroll-behavior: smooth;
+}
