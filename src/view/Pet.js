@@ -36,7 +36,7 @@ const Pet = () => {
                 Suscipit neque architecto molestiae praesentium in quam magnam tempore cum illo, velit blanditiis tempora nihil, culpa numquam ipsa ad deserunt ex aliquam distinctio soluta quod! Dolores mollitia molestias culpa soluta.
                 Facilis, expedita assumenda, suscipit quidem et veniam aut doloribus mollitia cumque excepturi pariatur repellendus quasi cum! Delectus quaerat ipsam quas minus impedit, alias iusto corporis dicta exercitationem iste ipsa nesciunt!
                 Cum harum non officia, quidem eligendi quam qui sequi beatae vitae recusandae accusantium sint dolorem similique magni assumenda necessitatibus porro repellat nam nobis praesentium ipsum placeat tempore. Aut, commodi ad.</p>
-            <button className='position-fixed' style={{ bottom: '10px', right: '10px' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>▲</button>
+            <button className='btn btn-secondary rounded-pill position-fixed' style={{ width: '40px', height: '40px', bottom: '20px', right: '20px' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>▲</button>
         </>
     )
 }
