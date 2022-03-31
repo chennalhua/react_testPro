@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import smoothscroll from 'smoothscroll-polyfill'
 const Pet = () => {
-    
+    useEffect(() => {
+        smoothscroll.polyfill()
+    }, []);
     return (
         <>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, in similique animi excepturi illum consequuntur unde voluptatum ipsum tenetur nostrum voluptas est distinctio ex sit nam commodi? Harum, quasi sint.
