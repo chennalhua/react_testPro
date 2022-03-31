@@ -281,3 +281,54 @@
 html {
     scroll-behavior: smooth;
 }
+
+.declare {
+    margin: 15px 0;
+    &-step {
+        cursor: pointer;
+        border: 2px solid #f06c6c;
+        color: $dark;
+        padding: 10px 20px;
+        border-radius: 5px;
+        &:hover {
+            color: #f06c6c;
+        }
+    }
+    &-active {
+        background: #f06c6c;
+        color: #fff;
+        &::before {
+            content: "";
+            font-family: "Font Awesome 5 Free";
+            margin-right: 10px;
+            // @include view-576 {
+            //     display: block;
+            // }
+        }
+        &:hover {
+            color: #fff;
+        }
+    }
+    &-scroll {
+        overflow-y: scroll;
+        line-height: 30px;
+        height: 180px;
+        h5 {
+            margin: 15px 0;
+            color: #f06c6c;
+        }
+    }
+}
+
+.scrolldown-button {
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    // &::after {
+    //     font-family: "Font Awesome 5 Free";
+    //     content: "\f0ab";
+    //     font-weight: bolder;
+    //     color: $primary;
+    //     font-size: 28px;
+    // }
+}
