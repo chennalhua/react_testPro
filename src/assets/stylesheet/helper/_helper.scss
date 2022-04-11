@@ -23,3 +23,42 @@ $dark-blue:  #315176; //自訂
     }
 }
 
+$primary: #ffb835; //#ffb11b
+$secondary: #83aa5d;
+$third: #f7f7f7;
+$primary-light: #fff4df;
+$secondary-light: #e8ffd1;
+$dark: #292929;
+$danger:#dc3545;
+
+//RWD media
+@mixin view-1400 {
+    @media (max-width: 1400px) {
+        @content;
+    }
+}
+@mixin view-1100 {
+    @media (max-width: 1100px) {
+        @content;
+    }
+}
+@mixin view-992 {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+@mixin view-768 {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+@mixin view-576 {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+@mixin view-414 {
+    @media (max-width: 414px) {
+        @content;
+    }
+}

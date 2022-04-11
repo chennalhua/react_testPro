@@ -10,14 +10,15 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import LineLogin from '../assets/javascript/lineLogin';
 // import Countfunc from '../../assets/javascript/countfunc';
 const Directory = () => {
+    // window.location.href = document.referrer;
     //component
     let [isLoading, setIsLoading] = useState(true);
 
     //test localstorage
     let [allData, setAllData] = useState([])
-    let [text,setText] = useState('無')
+    let [text, setText] = useState('無')
     useEffect(() => {
-        localStorage.setItem('testPage','localStorage')
+        localStorage.setItem('testPage', 'localStorage')
         setText(localStorage.getItem('testPage'))
     }, []);
 

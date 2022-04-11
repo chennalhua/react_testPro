@@ -1,0 +1,189 @@
+.article-row {
+    &-title {
+        height: 70px;
+        letter-spacing: 4px;
+        line-height: 1.5;
+        font-size: 18px;
+    }
+    &-briefly {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        text-align: justify;
+    }
+    &-tag {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 30;
+    }
+    input[placeholder] {
+        padding-left: 38px;
+        letter-spacing: 2px;
+    }
+    .search--icon-before {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+    }
+    &-nav {
+        button {
+            border-bottom: 8px solid;
+        }
+    }
+    .card {
+        cursor: pointer;
+        &:hover img {
+            transform: scale(1.1);
+        }
+        &-body {
+            height: 65px;
+        }
+        &-img {
+            overflow: hidden;
+        }
+        &-img-top {
+            object-fit: cover;
+            object-position: center;
+            transition: all 0.3s;
+        }
+    }
+}
+//內頁
+.article {
+    &-banner {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        @include view-1400 {
+            height: 250px;
+        }
+        @include view-992{
+            height: 300px;
+        }
+        &-title {
+            position: absolute;
+            top: 50%;
+            right: 15%;
+            transform: translate(-50%, -50%);
+            letter-spacing: 12px;
+            color: #412a00;
+            @include view-992 {
+                right: 6%;
+            }
+            @include view-576 {
+                right: -12%;
+            }
+        }
+    }
+    &-content {
+        position: relative;
+        // &::before {
+        //     content: "";
+        //     width: 190px;
+        //     height: 140px;
+        //     background: $primary;
+        //     border-radius: 50%;
+        //     position: absolute;
+        //     top: -70px;
+        //     right: -135px;
+        //     @include view-992 {
+        //         content: "";
+        //         width: 0;
+        //         height: 0;
+        //     }
+        // }
+        // &::after {
+        //     content: "";
+        //     width: 190px;
+        //     height: 140px;
+        //     background: $secondary;
+        //     border-radius: 50%;
+        //     position: absolute;
+        //     bottom: -185px;
+        //     left: -130px;
+        //     @include view-576 {
+        //         content: "";
+        //         width: 0;
+        //         height: 0;
+        //     }
+        // }
+    }
+    &-title {
+        //標題
+        font-size: 28px;
+        text-align: center;
+        font-weight: bolder;
+        &--subtitle {
+            //次標題
+            font-size: 20px;
+            font-weight: bolder;
+            line-height: 42px;
+        }
+        &--third {
+            //第三標題
+            font-size: 18px;
+            font-weight: 600;
+            color: $secondary;
+        }
+    }
+    &-paragraph {
+        margin: 36px 0;
+    }
+    p {
+        margin: 10px 0;
+    }
+    p,
+    ul,
+    li,
+    th,
+    td {
+        letter-spacing: 2px;
+        line-height: 30px;
+        text-align: justify;
+    }
+    ul > li {
+        margin: 24px 0;
+    }
+    strong {
+        color: #bd0909;
+    }
+    th,
+    td {
+        padding: 3px;
+        white-space: nowrap;
+    }
+    th {
+        padding: 5px 3px;
+    }
+}
+
+
+.facebook--icon-before {
+    height: 71px;
+    &::before {
+        content: "";
+        background-image: url("../../images/facebook.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 18px;
+        @include view-576 {
+            padding: 16px;
+        }
+    }
+}
+
+.line--icon-before {
+    height: 71px;
+    &::before {
+        content: "";
+        background-image: url("../../images/line.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 18px;
+        @include view-576 {
+            padding: 16px;
+        }
+    }
+}

@@ -8,7 +8,9 @@ import DomToImg from "./view/domToImg"
 import Cus from "./view/visitCustomer"
 import Phone from "./view/IsIOSorAndroid"
 import Pdf from "./view/downloadpdf"
-import Pet from './view/Pet'
+import Pet from './view/pet/Pet'
+import Article from './view/pet/Article'
+import ArticlePage from './view/pet/ArticlePage'
 // import Ecard from "./view/insurancePolicy/personal/Ecard"
 
 const AppRoute = (props) => {
@@ -23,6 +25,8 @@ const AppRoute = (props) => {
             <Route exact path="/phone"><Phone /></Route>
             <Route exact path="/pdf"><Pdf /></Route>
             <Route exact path="/pet"><Pet /></Route>
+            <Route exact path="/aboutPet"><Article /></Route>
+            <Route exact path="/aboutPet/:id"><ArticlePage /></Route>
         </Router>
     )
 }

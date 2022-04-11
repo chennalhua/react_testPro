@@ -332,3 +332,42 @@ html {
     //     font-size: 28px;
     // }
 }
+
+.company {
+    display: flex;
+    border: 3px solid transparent;
+    text-align: center;
+    &-logo {
+        width: 120px;
+        text-align: center;
+    }
+    .active {
+        border: 3px solid $primary;
+        border-radius: 10px;
+        background: #fff;
+    }
+    &-arrow {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &-title {
+        color: $primary;
+        margin: 10px 0;
+    }
+}
+
+.wait-sale {
+    width: 125px;
+    top: 50%;
+    left: 50%;
+    background: rgba($secondary, 0.8);
+    color: #fff;
+    transform: translate(-50%, -50%) rotate(-8deg);
+    // transform: rotate(-8deg);
+}
