@@ -27,10 +27,10 @@ const ArticlePage = () => {
                             <Meta property="og:locale" content="zh_TW" />
                             <Meta property="og:type" content="website" />
                             <Meta property="og:title" content="REACT_APP_PET" />
-                            <Meta property="og:description" content="數位轉型如何做？臺灣傳統產業有哪些成功案例？" />
+                            <Meta property="og:description" content="寵物保險保什麼？為何需要寵物險？" />
                             <Meta property="og:image" content="https://upload.cc/i1/2022/04/11/1RTUgA.jpg" />
-                            <Meta property="og:image:alt" content="數位轉型如何做？臺灣傳統產業有哪些成功案例？" />
-                            <Meta property="og:image:type" content="image/png" />
+                            <Meta property="og:image:alt" content="寵物保險保什麼？為何需要寵物險？" />
+                            <Meta property="og:image:type" content="image/jpg" />
                             <Meta property="og:image:width" content="500" />
                             <Meta property="og:image:height" content="350" />
                         </HeadProvider>
