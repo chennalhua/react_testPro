@@ -5,7 +5,7 @@ import ArticleData from './article.json' //文章內容
 const Article = () => {
     const handleGoToPage = (e) => { //前往對應文章 PAGE
         let { dataset } = e.target
-        window.location.href = `/aboutPet/article${dataset.link}` //連結網址
+        window.location.href = `/#/aboutPet/article${dataset.link}` //連結網址
     }
 
     return (
