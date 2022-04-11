@@ -164,7 +164,10 @@
     height: 71px;
     &::before {
         content: "";
-        background-image: url("../../images/facebook.svg");
+        // background-image: url("../../images/facebook.svg");
+        width: 20px;
+        height: 20px;
+        background-color: #0e3c78;
         background-repeat: no-repeat;
         background-size: contain;
         padding: 18px;
@@ -178,7 +181,10 @@
     height: 71px;
     &::before {
         content: "";
-        background-image: url("../../images/line.svg");
+        // background-image: url("../../images/line.svg");
+        width: 20px;
+        height: 20px;
+        background-color: #2b9806;
         background-repeat: no-repeat;
         background-size: contain;
         padding: 18px;
