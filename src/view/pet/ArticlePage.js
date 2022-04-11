@@ -21,14 +21,6 @@ const ArticlePage = () => {
                     <>
                         <Helmet>
                             <title>寵物保險保什麼？為何需要寵物險？|GOGO保-寵物險網投專屬平台</title>
-                            <meta property="og:url" content="https://chennalhua.github.io/react_testPro/#/aboutPet/article1" />
-                            <meta property="og:locale" content="zh_TW" />
-                            <meta property="og:type" content="website" />
-                            <meta property="og:title" content="REACT_APP_PET" />
-                            <meta property="og:description" content="寵物保險保什麼？為何需要寵物險？" />
-                            <meta property="og:image" content="https://upload.cc/i1/2022/04/11/1RTUgA.jpg" />
-                            <meta property="og:image:alt" content="寵物保險保什麼？為何需要寵物險？" />
-                            <meta property="og:image:type" content="image/png" />
                         </Helmet>
                         <div className='article'>
                             <img src={require('./article/寵物險NO.1_L.jpg').default} className='img-fluid d-none d-md-block' alt='寵物保險保什麼？為何需要寵物險？' />
