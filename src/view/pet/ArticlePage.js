@@ -131,6 +131,10 @@ const ArticlePage = () => {
                             <title>哪些寵物能保寵物險？有年齡或別的條件限制嗎？|GOGO保-寵物險網投專屬平台</title>
                             <meta property='og:url' content='https://chennalhua.github.io/react_testPro/#/aboutPet/article3' />
                             <meta property="og:image" content="https://upload.cc/i1/2022/04/11/1RTUgA.jpg" />
+                            <meta property="og:image:alt" content="PET_測試圖片文章3 alt" />
+                            <meta property="og:image:type" content="image/jpg" />
+                            <meta property="og:image:width" content="500" />
+                            <meta property="og:image:height" content="350" />
                         </Helmet>
                         <div className='article'>
                             <img src={require('./article/寵物險NO.3_L.jpg').default} className='img-fluid d-none d-md-block' alt='哪些寵物能保寵物險？有年齡或別的條件限制嗎？' />
