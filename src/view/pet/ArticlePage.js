@@ -21,7 +21,7 @@ const ArticlePage = () => {
                     <>
                         <Helmet>
                             <title>寵物保險保什麼？為何需要寵物險？|GOGO保-寵物險網投專屬平台</title>
-                            <link rel="apple-touch-icon" href="/react_testPro/meta-image.png" />
+                            <link rel="apple-touch-icon" href="/react_testPro/寵物險NO.1_S.jpg" />
                         </Helmet>
                         <div className='article'>
                             <img src={require('./article/寵物險NO.1_L.jpg').default} className='img-fluid d-none d-md-block' alt='寵物保險保什麼？為何需要寵物險？' />
@@ -118,7 +118,7 @@ const ArticlePage = () => {
                     <>
                         <Helmet>
                             <title>哪些寵物能保寵物險？有年齡或別的條件限制嗎？|GOGO保-寵物險網投專屬平台</title>
-                            <link rel="apple-touch-icon" href="/react_testPro/meta-image.png" />
+                            <link rel="apple-touch-icon" href="/react_testPro/寵物險NO.1_S.jpg" />
                         </Helmet>
                         <div className='article'>
                             <img src={require('./article/寵物險NO.3_L.jpg').default} className='img-fluid d-none d-md-block' alt='哪些寵物能保寵物險？有年齡或別的條件限制嗎？' />
