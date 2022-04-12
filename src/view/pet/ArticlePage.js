@@ -3,6 +3,7 @@ import { useRouteMatch } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { HeadProvider, Title, Link, Meta } from 'react-head';
 import { FacebookShareButton, LineShareButton } from 'react-share'; //社群分享按鈕
+import DocumentMeta from 'react-document-meta';
 const ArticlePage = () => {
     let match = useRouteMatch();
     let pageId = match.params.id
@@ -15,25 +16,28 @@ const ArticlePage = () => {
     const handleGotoPage = (e) => { //立即投保 button
         window.location.href = '/#calPetAge'
     }
+
+    const meta = {
+        title: 'Some Meta Title',
+        description: 'I am a description, and I can create multiple tags',
+        canonical: 'http://example.com/path/to/page',
+        meta: {
+            charset: 'utf-8',
+            name: {
+                keywords: 'react,meta,document,html,tags'
+            },
+            property:{
+                'og:image': 'https://upload.cc/i1/2022/04/11/1RTUgA.jpg',
+                'og:image:type':'image/png'
+            }
+        }
+    }
     return (
         <>
             { //1. 寵物保險保什麼？為何需要寵物險？
                 pageId === 'article1' ?
                     <>
-                        <HeadProvider>
-                            <Title>寵物保險保什麼？為何需要寵物險？|GOGO保-寵物險網投專屬平台</Title>
-                            <Link rel="canonical" content="http://jeremygayed.com/" />
-                            <Meta property="og:url" content="https://chennalhua.github.io/react_testPro/#/" />
-                            <Meta property="og:locale" content="zh_TW" />
-                            <Meta property="og:type" content="website" />
-                            <Meta property="og:title" content="REACT_APP_PET" />
-                            <Meta property="og:description" content="寵物保險保什麼？為何需要寵物險？" />
-                            <Meta property="og:image" content="https://upload.cc/i1/2022/04/11/1RTUgA.jpg" />
-                            <Meta property="og:image:alt" content="寵物保險保什麼？為何需要寵物險？" />
-                            <Meta property="og:image:type" content="image/jpg" />
-                            <Meta property="og:image:width" content="500" />
-                            <Meta property="og:image:height" content="350" />
-                        </HeadProvider>
+                        <DocumentMeta {...meta} />
                         <div className='article'>
                             <img src={require('./article/寵物險NO.1_L.jpg').default} className='img-fluid d-none d-md-block' alt='寵物保險保什麼？為何需要寵物險？' />
                             <img src={require('./article/寵物險NO.1_S.jpg').default} className='img-fluid d-block d-md-none ' alt='寵物保險保什麼？為何需要寵物險？' />
