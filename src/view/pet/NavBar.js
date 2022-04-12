@@ -13,14 +13,14 @@ const NavBar = (props) => {
         goToPage: function (e) {
             e.preventDefault();
             let { innerText } = e.target
-            window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+            // window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
             if (innerText === '首頁') {
-                window.location.href = '/#/pet' 
+                window.location.href = '/react_testPro/#/pet' 
             } else if (innerText === '知識大全') {
-                window.location.href = '/#/aboutPet' 
+                window.location.href = '/react_testPro/#/aboutPet' 
                 // window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
             } else if (innerText === '登入') {
-                window.location.href = '/#/aboutPet/article1' 
+                window.location.href = '/react_testPro/#/aboutPet/article1' 
                 // window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
             }
         }
