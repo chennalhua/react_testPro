@@ -13,7 +13,7 @@ const NavBar = (props) => {
         goToPage: function (e) {
             e.preventDefault();
             let { innerText } = e.target
-            // window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
             if (innerText === '首頁') {
                 window.location.href = '/react_testPro/#/pet' 
             } else if (innerText === '知識大全') {
