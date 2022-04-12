@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import smoothscroll from 'smoothscroll-polyfill'
+import NavBar from './NavBar';
 const Pet = () => {
+    // window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     let match = useRouteMatch()
     useEffect(() => {
         // window.onload(){
@@ -57,6 +59,7 @@ const Pet = () => {
     }
     return (
         <>
+            <NavBar />
             <div className='bg-third p-2 py-lg-5 px-lg-0'>
                 <div className='container'>
                     <ul className='row list-unstyled company justify-content-center'>

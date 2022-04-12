@@ -193,3 +193,203 @@
         }
     }
 }
+
+.btn-shadow-none {
+    box-shadow: none !important;
+}
+
+.logo{
+    // background: url('../../images/GOGOBO-logo.png') no-repeat;
+    background-color: antiquewhite;
+    background-size: contain;
+    background-position: center center;
+    width: 200px;
+    height: 45px;
+    @include view-576{
+        width: 160px;
+        height: 40px;
+    }
+    a{
+        text-indent: 101%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+.navbar {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+    .nav-item {
+        padding: 0 10px;
+        border-top: 0;
+        margin-top: 0px;
+        background: none;
+        a {
+            display: block;
+            white-space: nowrap;
+        }
+    }
+    @include view-992 {
+        & > div {
+            padding: 0;
+        }
+        .nav-item {
+            border-top: 2px solid #fff;
+            margin-top: -2px;
+            background: $third;
+            a {
+                text-align: center;
+                padding: 15px 0;
+            }
+        }
+    }
+    &-active {
+        background: $primary;
+        color: #412a00 !important;
+        border-radius: 5px;
+        &::before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f1b0";
+            font-weight: bolder;
+            padding-right: 5px;
+        }
+    }
+}
+
+footer {
+    padding-bottom: 16px !important;
+    @include view-768 {
+        padding-bottom: 67px !important;
+    }
+    .pet-cooperate {
+        img {
+            width: 100%;
+            @include view-768 {
+                width: 100%;
+            }
+        }
+    }
+}
+
+//資訊視窗
+.popover-body {
+    background: $secondary;
+    color: #fff;
+}
+.bs-popover-top > .popover-arrow::after,
+.bs-popover-auto[data-popper-placement^="top"] > .popover-arrow::after {
+    border-top-color: $secondary;
+}
+
+//ALERT
+.alert-mes {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 30;
+}
+
+.invalid-feedback {
+    background: $danger;
+    color: #fff;
+    padding: 3px;
+    margin-top: 8px;
+    border-radius: 30px;
+    width: 200px;
+    text-align: center;
+    position: relative;
+    &::before {
+        content: "";
+        border-top: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        border-bottom: 8px solid $danger;
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.gotop {
+    width: 40px;
+    height: 40px;
+    background: $secondary;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    box-shadow: 0 0 7px rgba($secondary, 1);
+    transition: all 0.3s;
+    &:hover {
+        background: $primary;
+        box-shadow: 0 0 7px rgba($primary, 1);
+    }
+    button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+.hot-tag {
+    position: relative;
+    &::after {
+        content: "獨家";
+        font-size: 14px;
+        text-align: center;
+        background: $danger;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        color: #fff;
+        padding: 10px 0;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        transform: rotate(-20deg);
+    }
+}
+
+/*loading*/
+.loading-wrapper {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    .loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+    .spinner-border--width {
+        width: 3rem;
+        height: 3rem;
+        border: 0.1em solid $light;
+        border-right-color: transparent;
+    }
+}
+
+//告知申明(自動滑到最下方 button)
+.scrolldown-button {
+    position: absolute;
+    top: 12px;
+    right: 25px;
+    color: #fff;
+    padding: 10px 5px;
+}

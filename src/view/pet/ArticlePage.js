@@ -4,7 +4,10 @@ import { Helmet } from 'react-helmet';
 import { HeadProvider, Title, Link, Meta } from 'react-head';
 import { FacebookShareButton, LineShareButton } from 'react-share'; //社群分享按鈕
 import DocumentMeta from 'react-document-meta';
+import NavBar from './NavBar';
 const ArticlePage = () => {
+    // window.scrollTo(0,0)
+    // window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     let match = useRouteMatch();
     let pageId = match.params.id
     if (pageId === 'article2') { //暫時沒有 id2 的文章，如 params 為 id2 則導回文章導覽頁
@@ -26,14 +29,15 @@ const ArticlePage = () => {
             name: {
                 keywords: 'react,meta,document,html,tags'
             },
-            property:{
+            property: {
                 'og:image': 'https://upload.cc/i1/2022/04/11/1RTUgA.jpg',
-                'og:image:type':'image/png'
+                'og:image:type': 'image/png'
             }
         }
     }
     return (
         <>
+            <NavBar />
             { //1. 寵物保險保什麼？為何需要寵物險？
                 pageId === 'article1' ?
                     <>
