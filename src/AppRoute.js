@@ -14,7 +14,6 @@ import ArticlePage from './view/pet/ArticlePage'
 // import Ecard from "./view/insurancePolicy/personal/Ecard"
 
 const AppRoute = (props) => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     return (
         <Router>
             <Route exact path="/login"><Login /></Route> {/* 登入 */}

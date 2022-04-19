@@ -3,7 +3,7 @@ import { useRouteMatch } from 'react-router-dom';
 import smoothscroll from 'smoothscroll-polyfill'
 import NavBar from './NavBar';
 const Pet = () => {
-    // window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     let match = useRouteMatch()
     useEffect(() => {
         // window.onload(){
