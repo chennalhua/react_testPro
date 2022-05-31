@@ -12,6 +12,8 @@ import Pet from './view/pet/Pet'
 import Article from './view/pet/Article'
 import ArticlePage from './view/pet/ArticlePage'
 import DomainShareLocalStrong from './view/DomainShareLocalstrong';
+import SearchSelect from './view/searchSelect';
+import AA from './view/ClosePage'
 // import Ecard from "./view/insurancePolicy/personal/Ecard"
 
 const AppRoute = (props) => {
@@ -29,6 +31,8 @@ const AppRoute = (props) => {
             <Route exact path="/aboutPet"><Article /></Route>
             <Route exact path="/aboutPet/:id"><ArticlePage /></Route>
             <Route exact path="/a"><DomainShareLocalStrong /></Route>
+            <Route exact path="/searchSelect"><SearchSelect /></Route>
+            <Route exact path="/close"><AA /></Route>
         </Router>
     )
 }
