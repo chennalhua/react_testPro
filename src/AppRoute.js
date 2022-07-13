@@ -14,6 +14,7 @@ import ArticlePage from './view/pet/ArticlePage'
 import DomainShareLocalStrong from './view/DomainShareLocalstrong';
 import SearchSelect from './view/searchSelect';
 import AA from './view/ClosePage'
+import Sign from './view/Sign'
 // import Ecard from "./view/insurancePolicy/personal/Ecard"
 
 const AppRoute = (props) => {
@@ -33,6 +34,7 @@ const AppRoute = (props) => {
             <Route exact path="/a"><DomainShareLocalStrong /></Route>
             <Route exact path="/searchSelect"><SearchSelect /></Route>
             <Route exact path="/close"><AA /></Route>
+            <Route exact path="/sign"><Sign /></Route>
         </Router>
     )
 }
